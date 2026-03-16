@@ -24,21 +24,21 @@ export default function ProductCombo() {
 
       {/* COMBO CARD */}
 
-      <div className="rounded-2xl bg-[#F7F8FA] p-4 space-y-4">
+      <div className="rounded-2xl bg-[#EEF3F8] border border-[#E3EAF3] p-5 space-y-5">
 
         {/* PRODUCT ROW */}
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between">
 
-          {/* PRODUCT 1 */}
+          {/* PRODUCT */}
 
           <div className="flex flex-col items-center gap-1">
 
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-gray-100">
+            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
 
               <Image
                 src="/product1.webp"
-                alt=""
+                alt="Main Product"
                 fill
                 className="object-cover"
               />
@@ -59,15 +59,15 @@ export default function ProductCombo() {
           </span>
 
 
-          {/* PRODUCT 2 */}
+          {/* PRODUCT */}
 
           <div className="flex flex-col items-center gap-1">
 
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-gray-100">
+            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
 
               <Image
                 src="/combo1.webp"
-                alt=""
+                alt="Combo Item"
                 fill
                 className="object-cover"
               />
@@ -86,15 +86,15 @@ export default function ProductCombo() {
           </span>
 
 
-          {/* PRODUCT 3 */}
+          {/* PRODUCT */}
 
           <div className="flex flex-col items-center gap-1">
 
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-gray-100">
+            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
 
               <Image
                 src="/combo2.webp"
-                alt=""
+                alt="Combo Item"
                 fill
                 className="object-cover"
               />
@@ -127,7 +127,9 @@ export default function ProductCombo() {
           </div>
 
 
-          <button className="bg-orange-500 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm hover:bg-orange-600 transition">
+          {/* CTA */}
+
+          <button className="bg-[#1E2A44] text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm hover:opacity-90 transition">
 
             Add Bundle
 
