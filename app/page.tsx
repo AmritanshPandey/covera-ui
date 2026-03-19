@@ -10,35 +10,43 @@ import BottomBar from "@/components/bottom-bar"
 import ProductOffers from "@/components/product-offers"
 import ProductDetails from "@/components/product-details"
 import ProductCombo from "@/components/product-combo"
+import WhatsAppButton from "@/components/whatsapp-button"
+import WhatsAppCard from "@/components/whatsapp-card"
 
 export default function Home() {
   return (
-    <>
-      <Header />
+   <>
+  <Header />
 
-      <main className="bg-[#fafafa] min-h-screen pb-32">
+  <main className="bg-[#fafafa] min-h-screen pb-32">
 
-        <ProductCarousel />
+    <ProductCarousel />
 
-        <div className="px-5 space-y-7 mt-5">
+    <div className="px-5 space-y-7 mt-5">
 
-          <ProductInfo />
+      <ProductInfo />
 
-          <SizeSelector />
+      <SizeSelector />
 
-          <ProductCombo />
+      <WhatsAppCard />
 
-          <ProductOffers />
+      <ProductCombo />
 
-          <TrustBadges />
+      <ProductOffers />
 
-          <ProductDetails />
+      <TrustBadges />
 
-        </div>
+      <ProductDetails />
 
-      </main>
+    </div>
 
-      <BottomBar />
-    </>
+  </main>
+
+  <BottomBar />
+
+  {/* ✅ ADD HERE */}
+  <WhatsAppButton />
+
+</>
   )
 }
