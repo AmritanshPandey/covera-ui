@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useMemo, useState } from "react"
+import { IconPlus } from "@tabler/icons-react"
 
 const MAIN_PRODUCT_IMAGE = "/product1.webp"
 
@@ -72,25 +73,29 @@ export default function ProductCombo() {
         {/* PRODUCT ROW */}
         <div className="flex items-center justify-between gap-3">
           {items.map((item, idx) => (
-            <button
-              key={`${item.src}-${idx}`}
-              type="button"
-              onClick={() => {
-                if (idx === 0 || item.locked) return
-                setSwapTarget(idx)
-              }}
-              className={`group flex flex-col items-center gap-1 rounded-2xl ${idx === 0 || item.locked ? "cursor-default" : "cursor-pointer"}`}
-            >
-              <div className={`relative h-24 w-20 overflow-hidden rounded-2xl bg-white ${idx === 0 || item.locked ? "ring-1 ring-[#1E2A44]/35" : "ring-2 ring-[#1E2A44]/80"} ${swapTarget === idx ? "ring-2 ring-[#1E2A44]" : ""}`}>
-                <Image src={item.src} alt={item.label} fill className="object-cover rounded-2xl" />
-                {swapTarget === idx && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-[#1E2A44]/70 text-[11px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-[2px]">
-                    Tap to swap
-                  </div>
-                )}
-              </div>
-              <span className="text-xs text-[#64748b]">{item.price}</span>
-            </button>
+            <div key={`${item.src}-${idx}`} className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  if (idx === 0 || item.locked) return
+                  setSwapTarget(idx)
+                }}
+                className={`group flex flex-col items-center gap-1 rounded-2xl ${idx === 0 || item.locked ? "cursor-default" : "cursor-pointer"}`}
+              >
+                <div className={`relative h-24 w-20 overflow-hidden rounded-2xl bg-white ${idx === 0 || item.locked ? "ring-1 ring-[#1E2A44]/35" : "ring-2 ring-[#1E2A44]/80"} ${swapTarget === idx ? "ring-2 ring-[#1E2A44]" : ""}`}>
+                  <Image src={item.src} alt={item.label} fill className="object-cover rounded-2xl" />
+                  {swapTarget === idx && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-[#1E2A44]/70 text-[11px] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-[2px]">
+                      Tap to swap
+                    </div>
+                  )}
+                </div>
+                <span className="text-xs text-[#64748b]">{item.price}</span>
+              </button>
+              {idx < items.length - 1 && (
+                <IconPlus size={20} className="text-[#1E2A44]/60 shrink-0" />
+              )}
+            </div>
           ))}
         </div>
 
