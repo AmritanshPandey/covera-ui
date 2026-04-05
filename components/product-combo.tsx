@@ -2,143 +2,64 @@
 
 import Image from "next/image"
 
-export default function ProductCombo() {
+const comboItems = [
+  { src: "/product1.webp", label: "Main Product", price: "₹1,899" },
+  { src: "/combo1.webp", label: "Leather Belt", price: "₹799" },
+  { src: "/combo2.webp", label: "Wallet", price: "₹499" },
+]
 
+export default function ProductCombo() {
   return (
     <section className="mt-8 space-y-4">
-
       {/* HEADER */}
-
-      <div className="flex items-center justify-between">
-
-        <h3 className="text-[16px] font-semibold text-[#1E2A44] tracking-tight">
-          Complete the look
-        </h3>
-
-        <span className="text-xs font-medium text-green-600">
-          Save ₹398
-        </span>
-
+      <div className="relative px-3.5">
+        <div className="flex items-center justify-between rounded-2xl bg-white/85 px-3.5 py-3 shadow-[0_14px_30px_-26px_rgba(0,0,0,0.35)] ring-1 ring-[#dfe7f5] backdrop-blur">
+          <div className="leading-tight text-[#0d1933]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1E2A44]">Bundle & save</p>
+            <p className="text-lg font-semibold">Complete the look</p>
+          </div>
+          <span className="rounded-full bg-[#D9F06B] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1E2A44] shadow-[0_10px_24px_-18px_rgba(0,0,0,0.35)]">
+            Save ₹398
+          </span>
+        </div>
       </div>
-
 
       {/* COMBO CARD */}
-
-      <div className="rounded-2xl bg-[#EEF3F8] border border-[#E3EAF3] p-5 space-y-5">
-
+      <div className="mx-3.5 space-y-4 rounded-3xl border border-[#dfe7f5] bg-gradient-to-br from-[#f7f9ff] via-white to-[#eef3ff] p-4 shadow-[0_20px_40px_-32px_rgba(0,0,0,0.28)]">
         {/* PRODUCT ROW */}
-
-        <div className="flex items-center justify-between">
-
-          {/* PRODUCT */}
-
-          <div className="flex flex-col items-center gap-1">
-
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
-
-              <Image
-                src="/product1.webp"
-                alt="Main Product"
-                fill
-                className="object-cover"
-              />
-
+        <div className="flex items-center justify-between gap-3">
+          {comboItems.map((item) => (
+            <div key={item.src} className="flex flex-col items-center gap-1">
+              <div className="relative h-24 w-20 rounded-2xl bg-white shadow-[0_12px_30px_-24px_rgba(0,0,0,0.28)]">
+                <Image src={item.src} alt={item.label} fill className="object-cover rounded-2xl" />
+              </div>
+              <p className="text-[11px] font-medium text-[#1E2A44]">{item.label}</p>
+              <span className="text-xs text-[#64748b]">{item.price}</span>
             </div>
-
-            <span className="text-xs text-gray-600">
-              ₹1,899
-            </span>
-
-          </div>
-
-
-          {/* CONNECTOR */}
-
-          <span className="text-gray-400 text-lg font-light">
-            +
-          </span>
-
-
-          {/* PRODUCT */}
-
-          <div className="flex flex-col items-center gap-1">
-
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
-
-              <Image
-                src="/combo1.webp"
-                alt="Combo Item"
-                fill
-                className="object-cover"
-              />
-
-            </div>
-
-            <span className="text-xs text-gray-600">
-              ₹799
-            </span>
-
-          </div>
-
-
-          <span className="text-gray-400 text-lg font-light">
-            +
-          </span>
-
-
-          {/* PRODUCT */}
-
-          <div className="flex flex-col items-center gap-1">
-
-            <div className="relative w-[72px] h-[96px] rounded-xl overflow-hidden bg-white shadow-sm">
-
-              <Image
-                src="/combo2.webp"
-                alt="Combo Item"
-                fill
-                className="object-cover"
-              />
-
-            </div>
-
-            <span className="text-xs text-gray-600">
-              ₹499
-            </span>
-
-          </div>
-
+          ))}
         </div>
 
+        {/* SEPARATOR */}
+        <div className="flex items-center gap-2 text-[12px] font-semibold text-[#1E2A44]">
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#cdd7ef] to-transparent" />
+          Bundle bonus
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#cdd7ef] to-transparent" />
+        </div>
 
         {/* PRICE ROW */}
-
-        <div className="flex items-center justify-between pt-2">
-
+        <div className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 ring-1 ring-[#e3ecfd]">
           <div className="space-y-[2px]">
-
-            <p className="text-xs text-gray-500">
-              Combo price
-            </p>
-
-            <p className="text-[20px] font-semibold text-[#1E2A44]">
-              ₹2,799
-            </p>
-
+            <p className="text-[12px] text-[#64748b]">Combo price</p>
+            <p className="text-[20px] font-semibold text-[#1E2A44]">₹2,799</p>
+            <p className="text-[11px] text-[#1E2A44]">You save ₹398 vs buying separately</p>
           </div>
 
-
           {/* CTA */}
-
-          <button className="bg-[#1E2A44] text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm hover:opacity-90 transition">
-
-            Add Bundle
-
+          <button className="rounded-xl bg-[#1E2A44] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_10px_26px_-22px_rgba(0,0,0,0.35)] transition hover:translate-y-[-1px] active:scale-[0.98]">
+            Add bundle
           </button>
-
         </div>
-
       </div>
-
     </section>
   )
 }
