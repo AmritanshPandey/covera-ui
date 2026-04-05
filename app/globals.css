@@ -144,3 +144,12 @@ body {
 .animate-marquee {
   animation: marquee 18s linear infinite;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

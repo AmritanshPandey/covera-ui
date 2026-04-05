@@ -76,7 +76,7 @@ export default function ProductOffers() {
 
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition duration-300 group-hover:scale-105 ${offer.bg ?? "bg-[#eaf0fb] text-[#1c2c4f]"}`}>
+                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl transition duration-300 group-hover:scale-105 ${offer.bg ?? "bg-[#eaf0fb] text-[#1c2c4f]"}`}>
                       {offer.icon ?? <IconTag size={16} />}
                     </div>
                     <div className="space-y-1">
