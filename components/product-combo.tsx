@@ -62,7 +62,7 @@ export default function ProductCombo() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1E2A44]">Bundle & save</p>
             <p className="text-lg font-semibold">Complete the look</p>
           </div>
-          <span className="rounded-full bg-[#22c55e] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+          <span className="rounded-full bg-emerald-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
             Save ₹398
           </span>
         </div>

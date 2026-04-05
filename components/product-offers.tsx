@@ -69,7 +69,7 @@ export default function ProductOffers() {
                 whileTap={{ scale: 0.985 }}
               >
                 {offer.badge && (
-                  <span className="absolute -top-3 left-4 rounded-md bg-[#22c55e] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white shadow">
+                  <span className="absolute -top-3 left-4 rounded-md bg-emerald-600 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white shadow">
                     {offer.badge}
                   </span>
                 )}
